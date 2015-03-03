@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Votaciones</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css"/>
+    <style>
+        .pantalla {
+            display : none;   
+        }
+        .pantalla.activa {
+            display : block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <header class="jumbotron">
+             <h1>Votaciones</h1>
+         </header>
+         
+         <div id="bienvenida" class="pantalla activa">
+             <h2>La aplicación definitiva para conocer tu opinión.</h2>
+             <button id="cargarPregunta" class="btn btn-lg btn-block btn-primary">
+                 Comenzar
+             </button>
+         </div>
+         
+         <div id="pregunta" class="pantalla">
+             <h2></h2>
+             <buton id="responderSi" class="btn btn-lg btn-block btn-primary">
+                 Oh yes, totally.
+             </buton>
+             <buton id="responderNo" class="btn btn-lg btn-block btn-primary">
+                 No way.
+             </buton>
+         </div>
+         
+        <div id="resultados" class="pantalla">
+            <h2>Resultados parciales</h2>
+            <!--table.table((tr>th*3)+(tr>td*3)*3)-->
+            <table class="table">
+                <tr>
+                    <th>Respuesta</th>
+                    <th>Votos</th>
+                    <th>Porcentaje</th>
+                </tr>            
+                <tr>
+                    <td>Sí:</td>
+                    <td>0</td>
+                    <td>0%</td>
+                </tr>
+                <tr>
+                    <td>No:</td>
+                    <td>0</td>
+                    <td>0%</td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+         
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/libs/jquery/jquery-1.11.2.min.js"></script>
+    <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="js/libs/history/native.history.js"></script>    
+    <script src="js/servicio.js"></script>
+    <script src="js/controlador.js"></script>    
+    <script>
+        $(document).ready(function(){
+            controlador.inicializar();
+        });
+    </script>
+</body>
+</html>
