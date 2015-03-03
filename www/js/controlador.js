@@ -1,14 +1,25 @@
 'use strict';
 var controlador = {    
     _$botonCargarPregunta : $('#cargarPregunta'),
+    _$botonRespuestaSi : $('#responderSi'),
+    _$botonRespuestaNo : $('#responderNo'),
     _$pantallaBienvenida : $('#bienvenida'),
     _$pantallaPregunta : $('#pregunta'),
+    _$pantallaRespuesta : $('#resultados'),
     
     _inicializarBienvenida : function () {
      var that = this;    
      this._$botonCargarPregunta.click(function(){
           that._cargarPregunta();
           that._navegar(that._$pantallaPregunta);
+      });
+      this._$botonRespuestaSi.click(function(){
+          that._submitRespuesta($(this).text());
+          that._navegar(that._$pantallaRespuesta);
+      });
+      this._$botonRespuestaNo.click(function(){
+          that._submitRespuesta($(this).html());
+          that._navegar(that._$pantallaRespuesta);
       });
     },  
     
@@ -68,5 +79,29 @@ var controlador = {
         respuesta.fail(function(){
             $preguntaDiv.html('No se ha podido obtener la pregunta');
         });
+    },
+    
+    _actualizarResultado : function(tag, resultado){
+        var cols = $('#resultados>table').find(tag).find('td');
+        $(cols[1]).html(resultado);
+        $(cols[2]).html(resultado);
+    },
+        
+    _submitRespuesta : function (data) {
+        var that = this;
+        var respuesta = servicio.submitRespuesta(data);   
+        var $tablaResultados = $('#resultados>table.si');
+        respuesta.done(function(resp){
+            that._actualizarResultado('.si',resp.si); 
+            that._actualizarResultado('.no',resp.no);
+            that._actualizarResultado('.total',parseInt(resp.si)+parseInt(resp.no));            
+        });
+        respuesta.done(function(){
+            $tablaResultados.html('No se han podido obtener los resultados');
+        });
     }
 };
+
+$(document).ready(function(){
+    controlador.inicializar();
+});
