@@ -90,7 +90,7 @@ var controlador = {
     _submitRespuesta : function (data) {
         var that = this;
         var respuesta = servicio.submitRespuesta(data);   
-        var $tablaResultados = $('#resultados>table.si');
+        var $tablaResultados = $('#resultados>table');
         respuesta.done(function(resp){
             that._actualizarResultado('.si',resp.si); 
             that._actualizarResultado('.no',resp.no);
