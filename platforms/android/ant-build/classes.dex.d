@@ -6,4 +6,6 @@ C:\curso\08AppVotacion\platforms\android\ant-build\classes\com\jfsanda\votacion\
 C:\curso\08AppVotacion\platforms\android\ant-build\classes\com\jfsanda\votacion\R$string.class \
 C:\curso\08AppVotacion\platforms\android\ant-build\classes\com\jfsanda\votacion\R$xml.class \
 C:\curso\08AppVotacion\platforms\android\ant-build\classes\com\jfsanda\votacion\R.class \
+C:\curso\08AppVotacion\platforms\android\ant-build\classes\nl\xservices\plugins\Toast$1.class \
+C:\curso\08AppVotacion\platforms\android\ant-build\classes\nl\xservices\plugins\Toast.class \
 C:\curso\08AppVotacion\platforms\android\ant-build\dexedLibs\classes-d01e81c12fa5d3bd4750ff60760b111e.jar \

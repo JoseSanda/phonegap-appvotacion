@@ -1,8 +1,8 @@
 /*global $ */
 var servicio = {
     
-    URL_SERVCIO_OBTENER_PREGUNTA : 'http://demo3767113.mockable.io/pregunta',
-    URL_SERVCIO_SUBMIT_RESPUESTA : 'https://demo3767113.mockable.io/respuesta',
+    URL_SERVCIO_OBTENER_PREGUNTA : 'https://demo9021555.mockable.io/pregunta',
+    URL_SERVCIO_SUBMIT_RESPUESTA : 'https://demo9021555.mockable.io/respuesta',
     
     setURLServicio : function (url) {
         this.URL_SERVCIO_PREGUNTA = url || URL_SERVCIO_PREGUNTA;  

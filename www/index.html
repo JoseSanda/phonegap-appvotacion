@@ -20,6 +20,7 @@
          <header class="jumbotron">
              <h1>Votaciones</h1>
          </header>
+         <div id="infoEstado"></div>
          
          <div id="bienvenida" class="pantalla activa">
              <h2>La aplicación definitiva para conocer tu opinión.</h2>
@@ -31,10 +32,10 @@
          <div id="pregunta" class="pantalla">
              <h2></h2>
              <buton id="responderSi" class="btn btn-lg btn-block btn-primary">
-                 Oh yes, totally.
+                 Claro que sí.
              </buton>
-             <buton id="responderNo" class="btn btn-lg btn-block btn-primary">
-                 No way.
+             <buton id="responderNo" class="btn btn-lg btn-block btn-danger">
+                 Ni de broma.
              </buton>
          </div>
          
@@ -63,6 +64,7 @@
                     <td></td>
                 </tr>
             </table>
+            <div id="chart"></div>
         </div>
          
     </div>
@@ -70,6 +72,7 @@
     <script src="js/libs/jquery/jquery-1.11.2.min.js"></script>
     <script src="js/libs/bootstrap/bootstrap.min.js"></script>
     <script src="js/libs/history/native.history.js"></script>    
+    <script src="js/libs/canvas/canvasjs.min.js"></script>    
     <script src="js/servicio.js"></script>
     <script src="js/controlador.js"></script>    
     
